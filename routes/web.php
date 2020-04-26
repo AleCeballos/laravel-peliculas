@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//muestra peliculas
+
+Route::get('/home-peliculas', 'PeliculasController@mostrarPeliculas');
+
+
+//muestra detalle de peliculas
+Route::get('/detalles-peliculas/{id}', 'PeliculasController@mostrarDetalles');
+
+Route::get('/titulos-peliculas', 'PeliculasController@mostrarTitulos');
+
+Route::get('/buscar-peliculas/{search?}', 'PeliculasController@buscarTitulos');
