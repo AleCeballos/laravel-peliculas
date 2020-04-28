@@ -15,7 +15,9 @@
     <hr>
     <p class="card-text">Release_date: {{$detallesPelicula->release_date}}</p>
     <hr>
+    @if($detallesPelicula->genero)
     <p class="card-text">Lenght: {{$detallesPelicula->length}}</p>
+    @endif
     <hr>
     @if($detallesPelicula->genero)
     <p class="card-text">Genre: {{$detallesPelicula->genero->name}}</p>
@@ -30,7 +32,7 @@
     @endforeach
     </ul>
 
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a class="navbar-brand text-white" href="{{url('/editar-peliculas')}}">Editar Peliculas</a>
   </div>
 </div>
 

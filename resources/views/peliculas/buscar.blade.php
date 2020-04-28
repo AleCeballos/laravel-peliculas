@@ -9,7 +9,11 @@
                </div>
                 <br>
            @empty
-           <p>no hay peliculas</p>
+           
+           <div class="alert alert-danger" role="alert">
+           no hay peliculas
+          </div>
+           
            @endforelse
      </div>
      </div>

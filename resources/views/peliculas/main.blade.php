@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -10,7 +12,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -35,11 +37,11 @@
 <div class="col-lg-5">
           @forelse($peliculas as $pelicula)
                <div class="card">
-                 <h5 class="card-header"><a href="{{url('/detalles-peliculas/'.$pelicula->id)}}"> {{$pelicula->title}}</a></h5>
+                 <h3 class="card-header"><a href="{{url('/detalles-peliculas/'.$pelicula->id)}}"><strong>{{$pelicula->title}}</a></strong></h3>
                    <div class="card-body">
-                       <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                       <h5 class="card-title">Awards: {{$pelicula->awards}}</h5>
+                          <p class="card-text">Rating: {{$pelicula->rating}}</p>
+                          
                    </div>
                </div>
                 <br>
@@ -58,11 +60,11 @@
 <div class="col-lg-5">
           @forelse($cualquierpel as $pelicula)
                <div class="card">
-                 <h5 class="card-header"> <a href="{{url('/detalles-peliculas/'.$pelicula->id)}}">{{$pelicula->title}}</a></h5>
+                 <h3 class="card-header"> <a href="{{url('/detalles-peliculas/'.$pelicula->id)}}"><strong>{{$pelicula->title}}</strong></a></h3>
                    <div class="card-body">
-                       <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                       <h5 class="card-title">Awards: {{$pelicula->awards}}</h5>
+                          <p class="card-text">Rating: {{$pelicula->rating}}</p>
+                         
                    </div>
                </div>
                 <br>
@@ -74,6 +76,7 @@
              {{$cualquierpel->links()}}
 
  </div>
+
 </div>
           
 

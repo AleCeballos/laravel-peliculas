@@ -1,3 +1,5 @@
+
+
 <!-- INCLUDE DE HEADER -->
 @include('peliculas.header')
 
@@ -16,7 +18,7 @@
     @foreach($titulosPelicula as $pelicula)
       <tr>
       <th scope="row">{{$pelicula->id}}</th>
-      <td>{{$pelicula->title}}</td>
+      <td><a href="{{url('/detalles-peliculas/'.$pelicula->id)}}">{{$pelicula->title}}</a></td>
       <td>@if($pelicula->genero)
     <p class="card-text">{{$pelicula->genero->name}}</p>
     @endif</td>

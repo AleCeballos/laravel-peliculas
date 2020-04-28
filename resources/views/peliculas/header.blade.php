@@ -1,4 +1,7 @@
-
+<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 <header >
 <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm ">
@@ -9,6 +12,10 @@
 
                 <a class="navbar-brand text-white ml-5" href="{{url('/home-peliculas')}}">Peliculas</a> 
                 <a class="navbar-brand text-white" href="{{url('/titulos-peliculas')}}">Títulos</a>
+             
+                <a class="navbar-brand text-white pl-5" href="{{url('/listadoEdicion-peliculas')}}">ABM peliculas</a>
+              
+               
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -43,12 +50,12 @@
 
                         </div>
                             <li class="nav-item dropdown ">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                           
-                                <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-white" href="{{ route('logout') }}"
+                                <div class="dropdown-menu dropdown-menu-right text-white bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-white bg-dark" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

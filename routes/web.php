@@ -23,14 +23,33 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//muestra peliculas
-
+// MUESTRA PELICULA
 Route::get('/home-peliculas', 'PeliculasController@mostrarPeliculas');
 
 
-//muestra detalle de peliculas
+
+//DETALLE
 Route::get('/detalles-peliculas/{id}', 'PeliculasController@mostrarDetalles');
 
+//TITULO
 Route::get('/titulos-peliculas', 'PeliculasController@mostrarTitulos');
 
+//BUSCA
 Route::get('/buscar-peliculas/{search?}', 'PeliculasController@buscarTitulos');
+
+//FORM AGREGAR
+Route::get('/agregar-peliculas', 'PeliculasController@agregarGenero');
+
+Route::post('/agregar-peliculas', 'PeliculasController@agregarPelicula');
+
+//FORM EDITAR
+Route::get('/listadoEdicion-peliculas', 'PeliculasController@listadoEdicion');
+
+Route::get('/editar-peliculas/{id}', 'PeliculasController@editarPersistencia');
+
+Route::post('/editar-peliculas', 'PeliculasController@editPeliculas');
+
+//FORM ELIMINAR
+Route::post('/eliminar-peliculas', 'PeliculasController@eliminarPelicula');
+
+
