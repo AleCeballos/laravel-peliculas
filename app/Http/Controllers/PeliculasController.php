@@ -26,14 +26,14 @@ class PeliculasController extends Controller
 
     public function mostrarPeliculas (){
 
-      $cualquierpel = Pelicula::orderBy('title', 'ASC')->paginate(5);   
-      $peliculas = Pelicula::orderBy('created_at', 'DESC')->paginate(5);
+      $cualquierpel = Pelicula::orderBy('title', 'ASC')->paginate(5, ['*'], 'pagina');   
+      $peliculas = Pelicula::orderBy('created_at', 'DESC')->paginate(5, ['*'], 'pagina2');
 
    //dd($cualquierpel);
   
     $vac = compact("peliculas", "cualquierpel");
  
-     return view('peliculas.main', $vac);
+     return view('home', $vac);
     }
 
   

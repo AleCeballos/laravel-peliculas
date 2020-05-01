@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -8,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="{{ asset('js/validar.js') }}"></script>
+    
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     
@@ -23,15 +25,15 @@
     <div id="app">
         <!-- quito el nav -->
 
-        @include('peliculas.header')
+      
 
         <main class="py-4">
-            @yield('content')
+          
         </main>
 
         <hr>
 
-        @include('peliculas.footer')
+   
     </div>
    
 </body>

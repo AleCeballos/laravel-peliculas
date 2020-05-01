@@ -1,8 +1,6 @@
+@extends('peliculas.main')
 
-
-<!-- INCLUDE DE HEADER -->
-@include('peliculas.header')
-
+@section('content')
 
 @if(Session::has('flash_message'))
 <div class="alert alert-success" role="alert">
@@ -73,7 +71,4 @@
   </div>
 </form>
 </div>
-
-
- <!-- INCLUDE DE FOOTER -->
- @include('peliculas.footer') 
+@endsection

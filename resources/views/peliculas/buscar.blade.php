@@ -1,6 +1,13 @@
-<!-- INCLUDE DE HEADER -->
-@include('peliculas.header')
+@extends('peliculas.main')
+
+@section('content')
+
+<div style="margin:auto">
+ <h3>Resultados de la busqueda</h3>
+</div>
+
 <div class="container mt-5 text-center " >
+
 <div class="col-lg-5 " style="margin-left:25%;">
           @forelse($resultado as $pelicula)
                <div class="card">
@@ -19,7 +26,4 @@
      </div>
 
 
-
-
-<!-- INCLUDE DE FOOTER -->
-@include('peliculas.footer') 
+@endsection

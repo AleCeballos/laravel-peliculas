@@ -1,7 +1,6 @@
+@extends('peliculas.main')
 
-
-<!-- INCLUDE DE HEADER -->
-@include('peliculas.header')
+@section('content')
 
 <div class="container text-center pt-3 pb-3">
 <div class="card" style="width: 38rem; height: 50rem; margin:auto;">
@@ -41,5 +40,4 @@
 
 
 
-<!-- INCLUDE DE FOOTER -->
-@include('peliculas.footer') 
+@endsection

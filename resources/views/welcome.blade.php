@@ -61,6 +61,12 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+   
+            .peliculas{
+
+                text-decoration: none;
+                color: #636b6f;
+            }
         </style>
     </head>
     <body>
@@ -81,12 +87,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Peliculas
+                  <a  class="peliculas" href="{{ url('/home-peliculas') }}">
+                  Peliculas
+                  </a>
                 </div>
                
                 
             </div>
         </div>
     </body>
-    @include('peliculas.footer')
+
 </html>

@@ -1,9 +1,6 @@
+@extends('peliculas.main')
 
-
-<!-- INCLUDE DE HEADER -->
-@include('peliculas.header')
-
-
+@section('content')
 
 <div class="text-center col-lg-3 pt-2" style="margin:auto;">
 @if(count($errors)>0)
@@ -21,7 +18,7 @@
 
 
 
-<h1>Agregar pelicula</h1>
+<h1>Editar pelicula</h1>
 <form action="/editar-peliculas" method="post">
 @csrf
 
@@ -72,6 +69,4 @@
 </form>
 </div>
 
-
- <!-- INCLUDE DE FOOTER -->
- @include('peliculas.footer') 
+@endsection

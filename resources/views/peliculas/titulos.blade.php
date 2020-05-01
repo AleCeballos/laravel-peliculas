@@ -1,8 +1,7 @@
 
+@extends('peliculas.main')
 
-<!-- INCLUDE DE HEADER -->
-@include('peliculas.header')
-
+@section('content')
 <div class="container text-center pt-3 pb-3">
 
 <table class="table table-bordered table-bordered bg-light">
@@ -33,5 +32,4 @@
 </div>
 
 
-<!-- INCLUDE DE FOOTER -->
-@include('peliculas.footer') 
+@endsection
