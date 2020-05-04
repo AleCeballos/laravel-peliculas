@@ -2,11 +2,23 @@
 
 @section('content')
 
-<div class="container text-center pt-3 pb-3">
-<div class="card" style="width: 38rem; height: 50rem; margin:auto;">
+
+
+
+<!-- ////////////////////////////////// -->
+<div class="container text-center pt-3 pb-3 " style="margin:auto; display:flex;">
+<div class="card bg-dark text-white" style="width: 38rem; height: 50rem; margin:auto;">
   <!-- <img src="..." class="card-img-top" alt="..."> -->
-  <div class="card-body ">
-    <h5 class="card-title"><strong>{{$detallesPelicula->title}}</strong></h5>
+  <div class="card-body "id="cardSombra">
+  <h5 class="card-title"><strong>{{$detallesPelicula->title}}</strong></h5>
+    <hr>
+
+
+    @if(isset($detallesPelicula->image))
+    <div>
+    <img  style="width:10rem; heigth:9rem;" src="/storage/{{$detallesPelicula->image}}" alt="">
+    </div>
+    @endif
     <hr>
     <p class="card-text">Awards: {{$detallesPelicula->awards}}</p>
     <hr>
@@ -14,7 +26,7 @@
     <hr>
     <p class="card-text">Release_date: {{$detallesPelicula->release_date}}</p>
     <hr>
-    @if($detallesPelicula->genero)
+    @if($detallesPelicula->length)
     <p class="card-text">Lenght: {{$detallesPelicula->length}}</p>
     @endif
     <hr>
@@ -31,11 +43,10 @@
     @endforeach
     </ul>
 
-    <a class="navbar-brand text-white" href="{{url('/editar-peliculas')}}">Editar Peliculas</a>
-  </div>
+  
 </div>
 
-</div>
+
 
 
 

@@ -14,44 +14,63 @@
 </div>
 @endif
 </div>
-<div class="container col-md-3 border text-center rounded" style="margin-top:3%;" >
+<div class="container col-lg-4 border text-center rounded text-white bg-dark" style="margin-top:0%;" >
+<h1 class="p-3">Editar pelicula</h1>
+<div class="row">
 
+<div class="col-lg-7 p-1 " style="margin:auto;" >
 
+<img style="heigth:10rem; width:10rem;  padding-top:6%;" src="/storage/{{$PeliculaPersistencia->image}}" alt="">
+</div>
 
-<h1>Editar pelicula</h1>
-<form action="/editar-peliculas" method="post">
+<div class="col-lg-6 " style="margin:auto;">
+
+<form action="/editar-peliculas" method="post" enctype="multipart/form-data">
 @csrf
 
 <input type="hidden" name="id" value="{{$PeliculaPersistencia->id}}">
 <div>
+<!-- title -->
+
 <label for="title">Título</label>
 <input class="form-control" type="text" name="title" value="{{$PeliculaPersistencia->title}}">
 </div>
-
+<!-- rating -->
 <div>
 <label for="rating">Rating</label>
 <input class="form-control" type="text" name="rating" value="{{$PeliculaPersistencia->rating}}">
 </div>
+<!-- awards -->
 <div>
 <label for="awards">Premios</label>
 <input class="form-control" type="text" name="awards" value="{{$PeliculaPersistencia->awards}}">
 </div>
+<!-- release_date -->
+
 <div>
 <label for="release_date">Fecha de lanzamiento</label>
 <input class="form-control" type="text" name="release_date" value="{{$PeliculaPersistencia->release_date}}">
 </div>
+
+<!-- length -->
+
 <div>
 <label for="length">Largo</label>
 <input class="form-control" type="text" name="length" value="{{$PeliculaPersistencia->length}}">
-
 </div>
-<!-- genreId -->
+
+ <!-- image -->
+<div>
+<label for="image">Imagen</label>
+<input class="form-control" type="file" name="image">
+</div> 
+
+
+<!-- genre_id -->
 <div class="form-group">
 <label for="genre_id">Generos</label>
   <select  type="text" class="form-control" name="genre_id" >
-   
-
-  
+    
     @forelse ($generos as $genero)
     <option>
   {{$genero->name}}
@@ -67,6 +86,12 @@
   <button type="submit" class="btn btn-success">Submit</button>
   </div>
 </form>
+
+<!-- fin de class col-lg-6 -->
+</div>
+<!-- fin de class row -->
+</div>
+<!-- fin de class container -->
 </div>
 
 @endsection
