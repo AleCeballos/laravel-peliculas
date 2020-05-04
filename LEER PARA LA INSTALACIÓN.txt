@@ -1,0 +1,4 @@
+1- Crear en php myAdmin la base de datos llamada movies_db, todos los comandos se encuentran en el archivo movies-db.sql, dentro de la carpeta database.
+2-Generar la conección a base de datos desde nuestro proyecto de laravel, una vez 
+realizado este paso correr las migraciones.
+3-Por ultimo ejecutar php artisan serve, registrarse y ya se podrá acceder al proyecto. 
