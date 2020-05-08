@@ -4,7 +4,7 @@
 
 @section('content')
 
-@if(Session::has('flash_message'))
+@if(Session::has('message'))
 <div class="alert alert-success" role="alert">
 {{Session::get('flash_message')}}
 </div>
@@ -15,10 +15,7 @@
 
 <div class="container text-center pt-3 pb-3">
 
-<div class="card text-right mt-1 mb-2" >
-<h5 class="card-header text-light bg-dark" ><a class="btn btn-success" href="{{url('/agregar-peliculas')}}" ><strong>Agregar una pelicula</strong></a></h5>
 
-</div>
 
 <!-- ////////////////////////// -->
 @foreach($titulosPelicula as $pelicula)
@@ -38,10 +35,14 @@
 <p class="card-text"><small class="text-muted">{{\FormatTime::LongTimeFilter($pelicula->created_at)}}</small></p>
 <div class="container">
 <div class="row">
-<div class="col">
+<div class="col-sm">
+<a class="btn btn-success" href="{{url('/agregar-peliculas')}}" >Agregar</a>
+</div>
+<div class="col-sm">
+    
 <a href="{{url('/editar-peliculas/'.$pelicula->id)}}" class="btn btn-warning">Editar</a>
 </div>
-<div class="col">
+<div class="col-sm">
 <form action="/eliminar-peliculas" method="post">
 @csrf
 <input type="hidden" name="id" value="{{$pelicula->id}}">

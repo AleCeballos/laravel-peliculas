@@ -1,7 +1,15 @@
 @extends('peliculas.main')
 
 @section('content')
+
+
 <div class="container col-lg-8  pt-3" style="heigth:30rem;">
+@if(Session::has('message-error'))
+<div class="alert alert-danger text-center" role="alert"><strong style="font-size:30px;">
+{{Session::get('message-error')}}
+</strong>
+</div>
+@endif
 <div class="row">
 <div class="col-lg-6" >
 
@@ -52,7 +60,7 @@
 <div id="textoDescriptivo">
 <p class="card-text">Para mas detalles acerca de la pelicula toque sobre el título. Las peliculas pueden descargarse gratis desde su reproductor.</p>
 </div>
-<p class="card-text"><small class="text-muted">Subido {{\FormatTime::LongTimeFilter($pelicula->created_at)}}</small></p>
+<p class="card-text"><small class="text-muted" id="ago">Subido {{\FormatTime::LongTimeFilter($pelicula->created_at)}}</small></p>
 </div>
 </div>
 </div>

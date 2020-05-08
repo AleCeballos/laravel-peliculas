@@ -25,11 +25,14 @@
         box-shadow: -8px 11px 15px 0px rgba(1,1,1,1.66);
     }
     
-
+  
     hr{
        background-color:rgb(20, 126, 71) !important;
        width: 30%;
     }
+
+
+    
     
     @media (min-width: 992px) and (max-width: 1259px){
         
